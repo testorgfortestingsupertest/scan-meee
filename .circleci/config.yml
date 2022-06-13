@@ -10,7 +10,7 @@ jobs:
       - run:
           name: "Scan for secrets"
           # change --since-commit to match your default branch
-          command: trufflehog git file://. --since-commit master --branch "$CIRCLE_BRANCH" --fail
+          command: trufflehog git file://. --since-commit master --branch "$CIRCLE_BRANCH" --fail --only-verified
 
 workflows:
   scan-secrets:
